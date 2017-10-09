@@ -6,7 +6,7 @@ The plugin was tested with Elastic Search 5.5 as data source.
 
 ## Installation
 
-Copy the dist folder in your plugin directory and rename it to trafficlight.
+Copy the dist folder in your grafana plugin directory and rename it to trafficlight.
 
 # Screenshots
 
