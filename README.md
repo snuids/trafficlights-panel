@@ -4,14 +4,20 @@ This grafana panel displays traffic lights based on the data source most recent 
 
 The plugin was tested with Elastic Search 5.5 as data source.
 
-# Showcase
+## Installation
+
+Copy the dist folder in your plugin directory and rename it to trafficlight.
+
+# Screenshots
+
+## Showcase
 
 ![Traffic Lights](https://raw.githubusercontent.com/snuids/trafficlights-panel/master/src/img/screenshot-traffic-showcase.jpg)
 
-# Metrics Configuration
+## Metrics Configuration
 
 ![Traffic Lights](https://raw.githubusercontent.com/snuids/trafficlights-panel/master/src/img/screenshot-traffic-metrics.jpg)
 
-# Panel Options
+## Panel Options
 
 ![Traffic Lights](https://raw.githubusercontent.com/snuids/trafficlights-panel/master/src/img/screenshot-traffic-options.jpg)
