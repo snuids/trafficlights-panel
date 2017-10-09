@@ -1,0 +1,42 @@
+<div class="editor-row">
+	<div class="section gf-form-group">
+		<h5 class="section-heading">Traffic light options</h5>
+		<div class="gf-form">
+			<label class="gf-form-label width-12">Lights per line</label>
+			<input type="text" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.lightsPerLine" ng-change="ctrl.render()" ng-model-onblur>
+		</div>
+		<div class="gf-form">
+				<label class="gf-form-label width-12">Width</label>
+				<input type="text" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.width" ng-change="ctrl.render()" ng-model-onblur>
+		</div>
+		<div class="gf-form">
+				<label class="gf-form-label width-12">Font Size</label>
+				<input type="text" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.fontSize" ng-change="ctrl.render()" ng-model-onblur>
+		</div>
+		<div class="gf-form">
+				<label class="gf-form-label width-12">Background</label>
+				<span class="max-width-10">
+					<spectrum-picker class="gf-form-input" ng-model="ctrl.panel.bgColor" ng-change="ctrl.render()" ></spectrum-picker>
+				</span>
+		</div>		
+		<gf-form-switch class="gf-form" label="Show Value" label-class="width-12" checked="ctrl.panel.trafficLightSettings.showValue" on-change="ctrl.render()"></gf-form-switch>
+	</div>
+
+	<div class="section gf-form-group" >
+		<h5 class="section-heading">Thresholds</h5>
+		<gf-form-switch class="gf-form" label="Invert Scale" label-class="width-12" checked="ctrl.panel.trafficLightSettings.invertScale" on-change="ctrl.render()"></gf-form-switch>
+		<div class="gf-form">
+			<label class="gf-form-label width-12">Red Threshold</label>
+			<input type="text" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.redThreshold" ng-change="ctrl.render()" ng-model-onblur>
+		</div>
+		<div class="gf-form">
+			<label class="gf-form-label width-12">Green Threshold</label>
+			<input type="text" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.greenThreshold" ng-change="ctrl.render()" ng-model-onblur>
+		</div>
+		<div class="gf-form">
+				<label class="gf-form-label width-12">Max Threshold</label>
+				<input type="text" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.max" ng-change="ctrl.render()" ng-model-onblur>
+		</div>
+	</div>
+
+</div>
