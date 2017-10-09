@@ -71,8 +71,8 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
           width: 20,
           invertScale: false,
           showValue: true,
-          redThreshold: 80,
-          greenThreshold: 20,
+          redThreshold: 20,
+          greenThreshold: 80,
           max: 100,
           fontSize: '12px'
         }
