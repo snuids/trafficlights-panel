@@ -25,8 +25,6 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
     super($scope, $injector);
     _.defaultsDeep(this.panel, panelDefaults);
 
-    alert('new 3');
-
     this.events.on('init-edit-mode', this.onInitEditMode.bind(this));
     this.events.on('panel-teardown', this.onPanelTeardown.bind(this));
     this.events.on('panel-initialized', this.render.bind(this));

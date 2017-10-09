@@ -1,7 +1,7 @@
 {
-  "name": "clock-panel",
+  "name": "trafficlights-panel",
   "version": "1.0.0",
-  "description": "Clock Panel Plugin for Grafana",
+  "description": "Traffic Lights Panel Plugin for Grafana",
   "main": "src/module.js",
   "scripts": {
     "lint": "eslint --color .",
