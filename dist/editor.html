@@ -18,8 +18,17 @@
 				<span class="max-width-10">
 					<spectrum-picker class="gf-form-input" ng-model="ctrl.panel.bgColor" ng-change="ctrl.render()" ></spectrum-picker>
 				</span>
-		</div>		
+		</div>
 		<gf-form-switch class="gf-form" label="Show Value" label-class="width-12" checked="ctrl.panel.trafficLightSettings.showValue" on-change="ctrl.render()"></gf-form-switch>
+		<div class="gf-form" ng-show="ctrl.panel.trafficLightSettings.showValue">
+				<label class="gf-form-label width-12">Units</label>
+				<input type="text" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.units" ng-change="ctrl.render()" ng-model-onblur>
+		</div>
+		<div class="gf-form" ng-show="ctrl.panel.trafficLightSettings.showValue">
+				<label class="gf-form-label width-12">Digits</label>
+				<input type="text" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.digits" ng-change="ctrl.render()" ng-model-onblur>
+		</div>
+		<gf-form-switch class="gf-form" label="Show Trend" label-class="width-12" checked="ctrl.panel.trafficLightSettings.showTrend" on-change="ctrl.render()"></gf-form-switch>
 	</div>
 
 	<div class="section gf-form-group" >

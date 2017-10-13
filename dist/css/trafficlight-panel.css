@@ -5,6 +5,23 @@
   flex-direction: column;
 }
 
+.traffic-light-trend-good
+{
+  background-color: green;
+  color:white;
+}
+
+.traffic-light-trend-bad
+{
+  background-color: red;
+  color:white;
+}
+
+.traffic-light-trend-neutral
+{
+  background-color: gray;
+  color:white;
+}
 
 .traffic-light-box
 {

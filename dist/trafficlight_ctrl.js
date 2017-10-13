@@ -71,10 +71,13 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
           width: 20,
           invertScale: false,
           showValue: true,
+          showTrend: true,
           redThreshold: 20,
           greenThreshold: 80,
           max: 100,
-          fontSize: '12px'
+          fontSize: '12px',
+          units: '',
+          digits: 1
         }
       };
 
@@ -114,22 +117,47 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
           key: 'onRender',
           value: function onRender() {
             //this.data = this.parseSeries(this.series);
-            console.log("On Render");
+            //console.log("On Render");
           }
         }, {
           key: 'onDataReceived',
           value: function onDataReceived(dataList) {
-            this.series = dataList.map(this.seriesHandler.bind(this));
-
             var newseries = [];
-            for (var i = 0; i < this.series.length; i++) {
-              var newserie = {
-                "name": this.series[i].label,
-                "value": this.series[i].datapoints.slice(-1)[0][0]
-              };
-              newseries.push(newserie);
+
+            try {
+              this.series = dataList.map(this.seriesHandler.bind(this));
+
+              for (var i = 0; i < this.series.length; i++) {
+                var newserie = {
+                  "name": this.series[i].label,
+                  "value": this.series[i].datapoints.slice(-1)[0][0]
+                };
+
+                if (this.series[i].datapoints.length > 1) {
+                  newserie.trend = newserie.value - this.series[i].datapoints.slice(-2)[0][0];
+
+                  if (newserie.trend > 0) {
+                    if (this.panel.trafficLightSettings.invertScale) newserie.trendClass = 'traffic-light-trend-bad';else newserie.trendClass = 'traffic-light-trend-good';
+                  } else if (newserie.trend < 0) {
+                    if (this.panel.trafficLightSettings.invertScale) newserie.trendClass = 'traffic-light-trend-good';else newserie.trendClass = 'traffic-light-trend-bad';
+                  } else newserie.trendClass = 'traffic-light-trend-neutral';
+                }
+                newseries.push(newserie);
+              }
+            } catch (e) {
+              // This is not a time serie
+              this.series = [];
+              for (var i = 0; i < dataList[0].rows.length; i++) {
+                var newserie = {
+                  "name": dataList[0].rows[i][0],
+                  "value": dataList[0].rows[i][1]
+                };
+                newseries.push(newserie);
+              }
             }
-            console.log(JSON.stringify(newseries));
+
+            //    console.log(newseries)
+
 
             if (this.panel.trafficLightSettings.invertScale) this.data = _.orderBy(newseries, 'value', 'desc');else this.data = _.orderBy(newseries, 'value', 'asc');
           }
