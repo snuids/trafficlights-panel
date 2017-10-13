@@ -13,10 +13,16 @@
 					|| (ctrl.panel.trafficLightSettings.invertScale && metric.value <= ctrl.panel.trafficLightSettings.greenThreshold) }"></div>
         </div>
       </div>
-      <div class="traffic-light-legend" style="font-size: {{ctrl.panel.trafficLightSettings.fontSize}};">{{metric.name}}
-          <span ng-if="ctrl.panel.trafficLightSettings.showValue">
-            <br/>({{metric.value | number:1}})</div>
+      <div class="traffic-light-legend" style="font-size: {{ctrl.panel.trafficLightSettings.fontSize}};">{{metric.name}}&nbsp;
+
+          <span ng-if="ctrl.panel.trafficLightSettings.showValue || ctrl.panel.trafficLightSettings.showTrend">            
+            <br/>
           </span>
+          <span ng-if="ctrl.panel.trafficLightSettings.showValue">
+            ({{metric.value | number:ctrl.panel.trafficLightSettings.digits}}{{ctrl.panel.trafficLightSettings.units}})
+          </span>
+          <span ng-if="ctrl.panel.trafficLightSettings.showTrend" ng-class="metric.trendClass">&nbsp;{{metric.trend | number:ctrl.panel.trafficLightSettings.digits}}&nbsp;</span>
+      </div>
     </div>
   </div>
 </div>
