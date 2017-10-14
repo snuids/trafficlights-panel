@@ -13,7 +13,7 @@
     "plugin",
     "panel"
   ],
-  "author": "Raintank",
+  "author": "snuids",
   "license": "MIT",
   "devDependencies": {
     "babel": "~6.5.1",
