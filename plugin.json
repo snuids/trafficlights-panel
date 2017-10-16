@@ -19,8 +19,8 @@
       {"name": "MIT License", "url": "https://github.com/snuids/trafficlights-panel"}
     ],
     "screenshots": [
-      {"name": "Showcase", "path": "src/img/screenshot-showcase.jpg"},
-      {"name": "Showcase", "path": "src/img/screenshot-showcase2.jpg"},
+      {"name": "Showcase", "path": "src/img/screenshot-traffic-showcase.jpg"},
+      {"name": "Showcase", "path": "src/img/screenshot-traffic-showcase2.jpg"},
       {"name": "Options", "path": "src/img/screenshot-traffic-options.jpg"}
     ],
     "version": "0.1.2",
