@@ -25,7 +25,7 @@ Copy the dist folder in your grafana plugin directory and rename it to trafficli
 ![Traffic Lights](https://raw.githubusercontent.com/snuids/trafficlights-panel/master/src/img/screenshot-traffic-options.jpg)
 
 # Versions
-# v0.1.2 (13/Oct/2017)
+## v0.1.2 (13/Oct/2017)
 - Added Units and Digits options
 - Added Trend options
 - Do no longer crash if there is no date histogram aggregation
