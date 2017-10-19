@@ -30,6 +30,5 @@ Copy the dist folder in your grafana plugin directory and rename it to trafficli
 - Added Trend options
 - Do no longer crash if there is no date histogram aggregation
 
-# Versions
 ## v1.1.0 (19/Oct/2017)
 - Versions synchronized
