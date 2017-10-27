@@ -1,7 +1,7 @@
 {
   "type": "panel",
   "name": "Traffic Lights",
-  "id": "grafana-traffic-lights",
+  "id": "snuids-traffic-lights",
 
   "info": {
     "description": "Traffic lights for grafana",
@@ -23,7 +23,7 @@
       {"name": "Showcase", "path": "src/img/screenshot-traffic-showcase2.jpg"},
       {"name": "Options", "path": "src/img/screenshot-traffic-options.jpg"}
     ],
-    "version": "1.1.0",
+    "version": "1.2.0",
     "updated": "2017-10-13"
   },
 

@@ -125,7 +125,7 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
 
   onInitEditMode() {
 
-    this.addEditorTab('Options', 'public/plugins/grafana-traffic-lights/editor.html', 2);
+    this.addEditorTab('Options', 'public/plugins/snuids-traffic-lights/editor.html', 2);
   }
 
   onPanelTeardown() {

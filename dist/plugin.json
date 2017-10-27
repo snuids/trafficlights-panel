@@ -1,7 +1,7 @@
 {
   "type": "panel",
   "name": "Traffic Lights",
-  "id": "grafana-traffic-lights",
+  "id": "snuids-traffic-lights",
 
   "info": {
     "description": "Traffic lights for grafana",
@@ -19,11 +19,12 @@
       {"name": "MIT License", "url": "https://github.com/snuids/trafficlights-panel"}
     ],
     "screenshots": [
-      {"name": "Showcase", "path": "src/img/screenshot-showcase.png"},
-      {"name": "Options", "path": "src/img/screenshot-clock-options.png"}
+      {"name": "Showcase", "path": "src/img/screenshot-traffic-showcase.jpg"},
+      {"name": "Showcase", "path": "src/img/screenshot-traffic-showcase2.jpg"},
+      {"name": "Options", "path": "src/img/screenshot-traffic-options.jpg"}
     ],
-    "version": "0.1.1",
-    "updated": "2017-10-09"
+    "version": "1.2.0",
+    "updated": "2017-10-13"
   },
 
   "dependencies": {
