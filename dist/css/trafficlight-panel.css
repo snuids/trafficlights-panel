@@ -1,3 +1,9 @@
+.errorlabel
+{
+  background-color: red;
+  color:white;
+}
+
 .trafficlight-panel {
   display: flex;
   align-items: center;

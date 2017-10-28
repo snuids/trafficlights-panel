@@ -19,9 +19,12 @@ const panelDefaults = {
     max:100,
     fontSize:'12px',
     units:'',
-    digits:1
+    digits:1,
+    spreadControls:false
   }
 };
+
+
 
 export class TrafficLightCtrl extends MetricsPanelCtrl {
   constructor($scope, $injector) {
@@ -133,13 +136,25 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
   }
 
   updateTraffics() {
-    this.percentPerLight=100/this.panel.trafficLightSettings.lightsPerLine;
+
+    var trafficsperline=this.panel.trafficLightSettings.lightsPerLine;
+
+    if(this.panel.trafficLightSettings.spreadControls)
+    {
+      trafficsperline=this.data.length;
+      if(this.data.length==0)
+        trafficsperline=1;
+      this.percentPerLight=100/trafficsperline;
+      
+    }
+    else
+      this.percentPerLight=100/trafficsperline;
 
     this.lines=[];
     var metrics=[];
     for(var i=0;i<this.data.length;i++)
     {
-      if((i%this.panel.trafficLightSettings.lightsPerLine)==0)
+      if((i%trafficsperline)==0)
 			{
 				metrics=[];
 				this.lines.push(metrics);

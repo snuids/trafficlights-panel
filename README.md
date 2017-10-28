@@ -36,3 +36,7 @@ Copy the dist folder in your grafana plugin directory and rename it to trafficli
 
 ## v1.2.0 (27/Oct/2017)
 - Panel id renamed to snuids-traffic-lights (Edit your panels plugin id when upgrading from 1.1.0)
+
+## v1.3.0 (28/Oct/2017)
+- Threshold validations added
+- Options number fields are now number fields. (Text in previous versions)

@@ -1,6 +1,6 @@
 {
   "name": "trafficlights-panel",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Traffic Lights Panel Plugin for Grafana",
   "main": "src/module.js",
   "scripts": {
