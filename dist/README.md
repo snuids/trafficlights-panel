@@ -40,3 +40,7 @@ Copy the dist folder in your grafana plugin directory and rename it to trafficli
 ## v1.3.0 (28/Oct/2017)
 - Threshold validations added
 - Options number fields are now number fields. (Text in previous versions)
+
+## v1.4.0 (01/Nov/2017)
+- Options tab hints added
+

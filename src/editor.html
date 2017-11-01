@@ -5,6 +5,7 @@
 		
 		<div class="gf-form">
 				<label class="gf-form-label width-12">Width</label>
+				<info-popover   mode="right-absolute">Width in pixels of a single traffic light.</info-popover>				
 				<input type="number" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.width" ng-change="ctrl.render()" ng-model-onblur>
 		</div>
 		<div class="gf-form">
@@ -20,10 +21,12 @@
 		<gf-form-switch class="gf-form" label="Show Value" label-class="width-12" checked="ctrl.panel.trafficLightSettings.showValue" on-change="ctrl.render()"></gf-form-switch>
 		<div class="gf-form" ng-show="ctrl.panel.trafficLightSettings.showValue">
 				<label class="gf-form-label width-12">Units</label>
+				<info-popover   mode="right-absolute">Free text added to the value.</info-popover>								
 				<input type="text" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.units" ng-change="ctrl.render()" ng-model-onblur>
 		</div>
 		<div class="gf-form" ng-show="ctrl.panel.trafficLightSettings.showValue">
 				<label class="gf-form-label width-12">Digits</label>
+				<info-popover   mode="right-absolute">Number of digits used to display the values.</info-popover>												
 				<input type="number" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.digits" ng-change="ctrl.render()" ng-model-onblur>
 		</div>
 		<gf-form-switch class="gf-form" label="Show Trend" label-class="width-12" checked="ctrl.panel.trafficLightSettings.showTrend" on-change="ctrl.render()"></gf-form-switch>
@@ -33,7 +36,9 @@
 		<h5 class="section-heading">Design</h5>
 		<gf-form-switch class="gf-form" label="Spread Traffic Lights per line" label-class="width-12" checked="ctrl.panel.trafficLightSettings.spreadControls" on-change="ctrl.render()"></gf-form-switch>
 		<div class="gf-form" ng-show="!ctrl.panel.trafficLightSettings.spreadControls">
-			<label class="gf-form-label width-12">Traffic Lights per line</label>
+			<label class="gf-form-label width-12">Controls per line</label>
+			<info-popover   mode="right-absolute">Numbers of traffic lights spread per line.</info-popover>
+			
 			<input type="number" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.lightsPerLine" ng-change="ctrl.render()" ng-model-onblur>
 		</div>
 		
@@ -45,14 +50,19 @@
 		<gf-form-switch class="gf-form" label="Invert Scale" label-class="width-12" checked="ctrl.panel.trafficLightSettings.invertScale" on-change="ctrl.render()"></gf-form-switch>
 		<div class="gf-form">
 			<label class="gf-form-label width-12">Red Threshold</label>
-			<input type="number" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.redThreshold" ng-change="ctrl.render()" ng-model-onblur>
+			<info-popover  ng-show="ctrl.panel.trafficLightSettings.invertScale" mode="right-absolute">Values above this limit will turn the traffic light to red.</info-popover>
+			<info-popover  ng-show="!ctrl.panel.trafficLightSettings.invertScale" mode="right-absolute">Values below this limit will turn the traffic light to red.</info-popover>
+			<input type="number" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.redThreshold" ng-change="ctrl.render()" ng-model-onblur>			
 		</div>
 		<div class="gf-form">
 			<label class="gf-form-label width-12">Green Threshold</label>
+			<info-popover  ng-show="ctrl.panel.trafficLightSettings.invertScale" mode="right-absolute">Values below this limit will turn the traffic light to green.</info-popover>
+			<info-popover  ng-show="!ctrl.panel.trafficLightSettings.invertScale" mode="right-absolute">Values above this limit will turn the traffic light to green.</info-popover>
 			<input type="number" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.greenThreshold" ng-change="ctrl.render()" ng-model-onblur>
 		</div>
 		<div class="gf-form" ng-show="!ctrl.panel.trafficLightSettings.invertScale">
 				<label class="gf-form-label width-12">Max Threshold</label>
+				<info-popover   mode="right-absolute">Values above this limit will turn the traffic light to red.</info-popover>
 				<input type="number" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.max" ng-change="ctrl.render()" ng-model-onblur>				
 		</div>
 		<div class="gf-form" ng-show="ctrl.panel.trafficLightSettings.invertScale && (ctrl.panel.trafficLightSettings.greenThreshold>ctrl.panel.trafficLightSettings.redThreshold)">			
