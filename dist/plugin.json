@@ -1,7 +1,7 @@
 {
   "type": "panel",
   "name": "Traffic Lights",
-  "id": "snuids-traffic-lights",
+  "id": "snuids-trafficlights-panel",
 
   "info": {
     "description": "Traffic lights for grafana",
