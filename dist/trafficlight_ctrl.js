@@ -175,7 +175,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
           key: 'onInitEditMode',
           value: function onInitEditMode() {
 
-            this.addEditorTab('Options', 'public/plugins/snuids-traffic-lights/editor.html', 2);
+            this.addEditorTab('Options', 'public/plugins/snuids-trafficlights-panel/editor.html', 2);
           }
         }, {
           key: 'onPanelTeardown',

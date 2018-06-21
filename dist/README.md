@@ -44,3 +44,9 @@ Copy the dist folder in your grafana plugin directory and rename it to trafficli
 ## v1.4.0 (01/Nov/2017)
 - Options tab hints added
 
+## v1.4.1 (21/Jun/2018)
+- Plugin id renamed to match grafana guidelines
+
+## v1.4.2 (21/Jun/2018)
+- Fix the editor path
+
