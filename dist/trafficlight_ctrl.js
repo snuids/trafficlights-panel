@@ -78,7 +78,8 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
           fontSize: '12px',
           units: '',
           digits: 1,
-          spreadControls: false
+          spreadControls: false,
+          sortLights: false
         }
       };
 
@@ -118,7 +119,6 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
           key: 'onRender',
           value: function onRender() {
             //this.data = this.parseSeries(this.series);
-            //console.log("On Render");
           }
         }, {
           key: 'onDataReceived',
@@ -160,7 +160,13 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
             //    console.log(newseries)
 
 
-            if (this.panel.trafficLightSettings.invertScale) this.data = _.orderBy(newseries, 'value', 'desc');else this.data = _.orderBy(newseries, 'value', 'asc');
+            if (this.panel.trafficLightSettings.sortLights) {
+              this.data = _.sortBy(newseries, [function (o) {
+                return o.name.replace(":", "").replace(" ", "").replace("}", "").replace("{", "");
+              }]);
+            } else {
+              if (this.panel.trafficLightSettings.invertScale) this.data = _.orderBy(newseries, 'value', 'desc');else this.data = _.orderBy(newseries, 'value', 'asc');
+            }
           }
         }, {
           key: 'seriesHandler',

@@ -20,7 +20,8 @@ const panelDefaults = {
     fontSize:'12px',
     units:'',
     digits:1,
-    spreadControls:false
+    spreadControls:false,
+    sortLights:false
   }
 };
 
@@ -55,7 +56,6 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
 
   onRender() {
     //this.data = this.parseSeries(this.series);
-    //console.log("On Render");
   }
 
 
@@ -66,6 +66,8 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
     try
     {
       this.series = dataList.map(this.seriesHandler.bind(this));
+
+
 
       for(var i =0;i<this.series.length;i++)
       {
@@ -109,13 +111,22 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
       }
     }
 
-//    console.log(newseries)
+  //    console.log(newseries)
 
+    
+    
 
-    if(this.panel.trafficLightSettings.invertScale)
-      this.data=_.orderBy(newseries, 'value','desc');
+    if(this.panel.trafficLightSettings.sortLights)
+    {
+      this.data=_.sortBy(newseries, [function(o) { return o.name.replace(":","").replace(" ","").replace("}","").replace("{","") }]);      
+    }
     else
-      this.data=_.orderBy(newseries, 'value','asc');
+    {
+      if(this.panel.trafficLightSettings.invertScale)
+        this.data=_.orderBy(newseries, 'value','desc');
+      else
+        this.data=_.orderBy(newseries, 'value','asc');
+    }
   }
 
   seriesHandler(seriesData) {

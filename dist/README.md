@@ -33,7 +33,6 @@ Copy the dist folder in your grafana plugin directory and rename it to trafficli
 ## v1.1.0 (19/Oct/2017)
 - Versions synchronized
 
-
 ## v1.2.0 (27/Oct/2017)
 - Panel id renamed to snuids-traffic-lights (Edit your panels plugin id when upgrading from 1.1.0)
 
@@ -50,3 +49,5 @@ Copy the dist folder in your grafana plugin directory and rename it to trafficli
 ## v1.4.2 (21/Jun/2018)
 - Fix the editor path
 
+## v1.4.4 (09/Aug/2018)
+- Sort by name option added

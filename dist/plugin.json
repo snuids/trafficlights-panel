@@ -23,8 +23,8 @@
       {"name": "Showcase", "path": "src/img/screenshot-traffic-showcase2.jpg"},
       {"name": "Options", "path": "src/img/screenshot-traffic-options.jpg"}
     ],
-    "version": "1.4.2",
-    "updated": "20178-06-21"
+    "version": "1.4.4",
+    "updated": "2018-08-09"
   },
 
   "dependencies": {
