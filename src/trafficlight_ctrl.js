@@ -35,7 +35,6 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
   constructor($scope, $injector, templateSrv) {
     super($scope, $injector);
     _.defaultsDeep(this.panel, panelDefaults);
-    console.log(templateSrv.replace("Este es mi entorno $environments y esta es mi scoped metrics $metric", { metric: { value: 3 }}))
 
     this.events.on('init-edit-mode', this.onInitEditMode.bind(this));
     this.events.on('panel-teardown', this.onPanelTeardown.bind(this));
