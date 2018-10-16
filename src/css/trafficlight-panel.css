@@ -105,3 +105,8 @@
 .traffic-light-vis .traffic-light-container .traffic-light .light.on.green {
   background-color: #5cb85c;
 }
+.traffic-light-empty-href {
+  pointer-events: none;
+  text-decoration: none;
+  cursor: default;
+}

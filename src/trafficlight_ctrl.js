@@ -21,14 +21,18 @@ const panelDefaults = {
     units:'',
     digits:1,
     spreadControls:false,
-    sortLights:false
+    sortLights:false,
+    renderLink:false,
+    linkUrl: "",
+    linkTooltip: "",
+    linkTargetBlank:false
   }
 };
 
 
 
 export class TrafficLightCtrl extends MetricsPanelCtrl {
-  constructor($scope, $injector) {
+  constructor($scope, $injector, templateSrv) {
     super($scope, $injector);
     _.defaultsDeep(this.panel, panelDefaults);
 
@@ -44,6 +48,7 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
     this.percentPerLight=100;
 
     this.data=[]
+    this.templateSrv = templateSrv
     this.updateTraffics();
   }
 
@@ -113,12 +118,9 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
 
   //    console.log(newseries)
 
-    
-    
-
     if(this.panel.trafficLightSettings.sortLights)
     {
-      this.data=_.sortBy(newseries, [function(o) { return o.name.replace(":","").replace(" ","").replace("}","").replace("{","") }]);      
+      this.data=_.sortBy(newseries, [function(o) { return o.name.replace(":","").replace(" ","").replace("}","").replace("{","") }]);
     }
     else
     {
@@ -146,6 +148,18 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
     this.$timeout.cancel(this.nextTickPromise);
   }
 
+  renderLink(link, scopedVars, format){
+    var scoped = {}
+    for (var key in scopedVars) {
+        scoped[key] = { value: scopedVars[key] }
+    }
+    if (format) {
+        return this.templateSrv.replace(link, scoped, format)
+    } else {
+        return this.templateSrv.replace(link, scoped)
+    }
+  }
+
   updateTraffics() {
 
     var trafficsperline=this.panel.trafficLightSettings.lightsPerLine;
@@ -156,7 +170,6 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
       if(this.data.length==0)
         trafficsperline=1;
       this.percentPerLight=100/trafficsperline;
-      
     }
     else
       this.percentPerLight=100/trafficsperline;
@@ -174,11 +187,6 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
     }
     this.nextTickPromise = this.$timeout(this.updateTraffics.bind(this), 1000);
   }
-
-
-
-
-
 
   link(scope, elem) {
     this.events.on('render', () => {
