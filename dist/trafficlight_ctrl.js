@@ -79,14 +79,18 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
           units: '',
           digits: 1,
           spreadControls: false,
-          sortLights: false
+          sortLights: false,
+          renderLink: false,
+          linkUrl: "",
+          linkTooltip: "",
+          linkTargetBlank: false
         }
       };
 
       _export('TrafficLightCtrl', TrafficLightCtrl = function (_MetricsPanelCtrl) {
         _inherits(TrafficLightCtrl, _MetricsPanelCtrl);
 
-        function TrafficLightCtrl($scope, $injector) {
+        function TrafficLightCtrl($scope, $injector, templateSrv) {
           _classCallCheck(this, TrafficLightCtrl);
 
           var _this = _possibleConstructorReturn(this, (TrafficLightCtrl.__proto__ || Object.getPrototypeOf(TrafficLightCtrl)).call(this, $scope, $injector));
@@ -105,6 +109,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
           _this.percentPerLight = 100;
 
           _this.data = [];
+          _this.templateSrv = templateSrv;
           _this.updateTraffics();
           return _this;
         }
@@ -159,7 +164,6 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
 
             //    console.log(newseries)
 
-
             if (this.panel.trafficLightSettings.sortLights) {
               this.data = _.sortBy(newseries, [function (o) {
                 return o.name.replace(":", "").replace(" ", "").replace("}", "").replace("{", "");
@@ -187,6 +191,19 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
           key: 'onPanelTeardown',
           value: function onPanelTeardown() {
             this.$timeout.cancel(this.nextTickPromise);
+          }
+        }, {
+          key: 'renderLink',
+          value: function renderLink(link, scopedVars, format) {
+            var scoped = {};
+            for (var key in scopedVars) {
+              scoped[key] = { value: scopedVars[key] };
+            }
+            if (format) {
+              return this.templateSrv.replace(link, scoped, format);
+            } else {
+              return this.templateSrv.replace(link, scoped);
+            }
           }
         }, {
           key: 'updateTraffics',

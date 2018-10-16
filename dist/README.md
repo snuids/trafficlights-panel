@@ -51,3 +51,7 @@ Copy the dist folder in your grafana plugin directory and rename it to trafficli
 
 ## v1.4.4 (09/Aug/2018)
 - Sort by name option added
+
+## v1.4.5 (16/Oct/2018)
+- Added option to add link to the traffic light (Raul Melo)
+- Clean some dev console logs (Raul Melo)
