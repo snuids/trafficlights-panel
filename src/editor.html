@@ -13,9 +13,9 @@
 				<input type="text" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.fontSize" ng-change="ctrl.render()" ng-model-onblur>
 		</div>
 		<div class="gf-form">
-				<label class="gf-form-label width-12">Background</label>
+				<label class="gf-form-label width-12">Font Color</label>
 				<span class="max-width-10">
-					<spectrum-picker class="gf-form-input" ng-model="ctrl.panel.bgColor" ng-change="ctrl.render()" ></spectrum-picker>
+					<spectrum-picker class="gf-form-input" ng-model="ctrl.panel.trafficLightSettings.fontColor" ng-change="ctrl.render()" ></spectrum-picker>
 				</span>
 		</div>
 		<gf-form-switch class="gf-form" label="Show Value" label-class="width-12" checked="ctrl.panel.trafficLightSettings.showValue" on-change="ctrl.render()"></gf-form-switch>
