@@ -18,6 +18,7 @@ const panelDefaults = {
     greenThreshold:80,
     max:100,
     fontSize:'12px',
+    fontColor: 'black',
     units:'',
     digits:1,
     spreadControls:false,
