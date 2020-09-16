@@ -231,7 +231,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
           }
         }, {
           key: 'link',
-          value: function link(scope, elem) {
+          value: function link(scope, elem, attrs, ctrl) {
             var _this2 = this;
 
             this.events.on('render', function () {
@@ -242,6 +242,9 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
               } else {
                 $panelContainer.css('background-color', '');
               }
+              setTimeout(function () {
+                return ctrl.renderingCompleted();
+              }, 1250);
             });
           }
         }]);

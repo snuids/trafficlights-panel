@@ -60,7 +60,7 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
     this.render();
   }
 
-  onRender() {
+  onRender() {    
     //this.data = this.parseSeries(this.series);
   }
 
@@ -129,7 +129,7 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
         this.data=_.orderBy(newseries, 'value','desc');
       else
         this.data=_.orderBy(newseries, 'value','asc');
-    }
+    }    
   }
 
   seriesHandler(seriesData) {
@@ -189,7 +189,7 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
     this.nextTickPromise = this.$timeout(this.updateTraffics.bind(this), 1000);
   }
 
-  link(scope, elem) {
+  link(scope, elem, attrs, ctrl) {
     this.events.on('render', () => {
       const $panelContainer = elem.find('.panel-container');
 
@@ -198,6 +198,7 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
       } else {
         $panelContainer.css('background-color', '');
       }
+      setTimeout(() => ctrl.renderingCompleted(), 1250);
     });
   }
 }
