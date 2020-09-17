@@ -15,7 +15,7 @@
 		<div class="gf-form">
 				<label class="gf-form-label width-12">Font Color</label>
 				<span class="max-width-10">
-					<spectrum-picker class="gf-form-input" ng-model="ctrl.panel.trafficLightSettings.fontColor" ng-change="ctrl.render()" ></spectrum-picker>
+					<spectrum-picker class="gf-form-input padding-8" ng-model="ctrl.panel.trafficLightSettings.fontColor" ng-change="ctrl.render()" ></spectrum-picker>
 				</span>
 		</div>
 		<gf-form-switch class="gf-form" label="Show Value" label-class="width-12" checked="ctrl.panel.trafficLightSettings.showValue" on-change="ctrl.render()"></gf-form-switch>
@@ -32,6 +32,41 @@
 		<gf-form-switch class="gf-form" label="Show Trend" label-class="width-12" checked="ctrl.panel.trafficLightSettings.showTrend" on-change="ctrl.render()"></gf-form-switch>
 		<gf-form-switch class="gf-form" label="Sort Lights" label-class="width-12" checked="ctrl.panel.trafficLightSettings.sortLights" on-change="ctrl.render()"></gf-form-switch>
     <gf-form-switch class="gf-form" label-class="width-12" label="Render as link" checked="ctrl.panel.trafficLightSettings.renderLink" change="ctrl.render()"></gf-form-switch>
+	</div>
+	<!-- Link -->
+	<div class="section gf-form-group" ng-if="ctrl.panel.trafficLightSettings.renderLink">
+		<h5 class="section-heading">Link</h5>
+		<div class="gf-form">
+			<label class="gf-form-label width-9">
+				Url
+				<info-popover mode="right-normal">
+					<p>Specify an URL (relative or absolute)</p>
+					<span>
+              Use special variables to specify timeseries values:
+              <br>
+              <em>$value</em> Value of the timeseries
+              <br>
+              <em>$name</em> Name of the timeseries
+              <br>
+              <em>$template</em> Any template defined on grafana
+            </span>
+				</info-popover>
+			</label>
+			<input type="text" class="gf-form-input width-29" ng-model="ctrl.panel.trafficLightSettings.linkUrl" ng-blur="editor.render()" ng-model-onblur data-placement="right">
+		</div>
+		<div class="gf-form">
+			<label class="gf-form-label width-9">
+				Tooltip
+				<info-popover mode="right-normal">
+					<p>Specify text for link tooltip.</p>
+					<span>
+              This title appears when user hovers pointer over the lights with link. Use the same variables as for URL.
+            </span>
+				</info-popover></label>
+			<input type="text" class="gf-form-input width-29" ng-model="ctrl.panel.trafficLightSettings.linkTooltip" ng-blur="editor.render()" ng-model-onblur
+				   data-placement="right">
+		</div>
+		<gf-form-switch class="gf-form" label-class="width-9" label="Open in new tab" checked="ctrl.panel.trafficLightSettings.linkTargetBlank"></gf-form-switch>
 	</div>
 	<!-- OPTIONS -->
 	<div class="section gf-form-group">
@@ -76,39 +111,4 @@
 			<label class="errorlabel">Max threshold Must be greater than green threshold.</label>
 		</div>
 	</div>
-  <!-- Link -->
-  <div class="section gf-form-group" ng-if="ctrl.panel.trafficLightSettings.renderLink">
-    <h5 class="section-heading">Link</h5>
-      <div class="gf-form">
-        <label class="gf-form-label width-9">
-          Url
-          <info-popover mode="right-normal">
-            <p>Specify an URL (relative or absolute)</p>
-            <span>
-              Use special variables to specify timeseries values:
-              <br>
-              <em>$value</em> Value of the timeseries
-              <br>
-              <em>$name</em> Name of the timeseries
-              <br>
-              <em>$template</em> Any template defined on grafana
-            </span>
-          </info-popover>
-        </label>
-        <input type="text" class="gf-form-input width-29" ng-model="ctrl.panel.trafficLightSettings.linkUrl" ng-blur="editor.render()" ng-model-onblur data-placement="right">
-      </div>
-      <div class="gf-form">
-        <label class="gf-form-label width-9">
-          Tooltip
-          <info-popover mode="right-normal">
-            <p>Specify text for link tooltip.</p>
-            <span>
-              This title appears when user hovers pointer over the lights with link. Use the same variables as for URL.
-            </span>
-          </info-popover></label>
-        <input type="text" class="gf-form-input width-29" ng-model="ctrl.panel.trafficLightSettings.linkTooltip" ng-blur="editor.render()" ng-model-onblur
-          data-placement="right">
-      </div>
-      <gf-form-switch class="gf-form" label-class="width-9" label="Open in new tab" checked="ctrl.panel.trafficLightSettings.linkTargetBlank"></gf-form-switch>
-  </div>
 </div>
