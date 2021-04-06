@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', './css/trafficlight-panel.css!'], function (_export, _context) {
+System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', './css/trafficlight-panel.css!', '@grafana/data'], function (_export, _context) {
   "use strict";
 
-  var MetricsPanelCtrl, moment, _, TimeSeries, _createClass, panelDefaults, TrafficLightCtrl;
+  var MetricsPanelCtrl, moment, _, TimeSeries, stringToJsRegex, _createClass, panelDefaults, TrafficLightCtrl;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -44,7 +44,9 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
       _ = _lodash.default;
     }, function (_appCoreTime_series) {
       TimeSeries = _appCoreTime_series.default;
-    }, function (_cssTrafficlightPanelCss) {}],
+    }, function (_cssTrafficlightPanelCss) {}, function (_grafanaData) {
+      stringToJsRegex = _grafanaData.stringToJsRegex;
+    }],
     execute: function () {
       _createClass = function () {
         function defineProperties(target, props) {
@@ -125,6 +127,46 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
           key: 'onRender',
           value: function onRender() {
             //this.data = this.parseSeries(this.series);
+            this.applyRegex();
+          }
+        }, {
+          key: 'applyRegex',
+          value: function applyRegex() {
+            var _this2 = this;
+
+            var seriesList = this.series;
+            if (seriesList && seriesList.length > 0) {
+              for (var i = 0; i < seriesList.length; i++) {
+                if (this.panel.trafficLightSettings.regexPattern !== '' && this.panel.trafficLightSettings.regexPattern !== undefined) {
+                  var regexVal = stringToJsRegex(this.panel.trafficLightSettings.regexPattern);
+                  if (seriesList[i].id && regexVal.test(seriesList[i].id.toString())) {
+                    var _ret = function () {
+                      var temp = regexVal.exec(seriesList[i].id.toString());
+                      if (!temp) {
+                        return 'continue';
+                      }
+                      var extractedtxt = '';
+                      if (temp.length > 1) {
+                        temp.slice(1).forEach(function (value, i) {
+                          if (value) {
+                            extractedtxt += extractedtxt.length > 0 ? ' ' + value.toString() : value.toString();
+                          }
+                        });
+                        _this2.data[i].name = extractedtxt;
+                      }
+                    }();
+
+                    if (_ret === 'continue') continue;
+                  } else {
+                    this.data[i].name = seriesList[i].id;
+                    seriesList[i].label = seriesList[i].id;
+                  }
+                } else {
+                  this.data[i].name = seriesList[i].id;
+                  seriesList[i].label = seriesList[i].id;
+                }
+              }
+            }
           }
         }, {
           key: 'onDataReceived',
@@ -172,6 +214,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
             } else {
               if (this.panel.trafficLightSettings.invertScale) this.data = _.orderBy(newseries, 'value', 'desc');else this.data = _.orderBy(newseries, 'value', 'asc');
             }
+            this.applyRegex();
           }
         }, {
           key: 'seriesHandler',
@@ -232,13 +275,13 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
         }, {
           key: 'link',
           value: function link(scope, elem, attrs, ctrl) {
-            var _this2 = this;
+            var _this3 = this;
 
             this.events.on('render', function () {
               var $panelContainer = elem.find('.panel-container');
 
-              if (_this2.panel.bgColor) {
-                $panelContainer.css('background-color', _this2.panel.bgColor);
+              if (_this3.panel.bgColor) {
+                $panelContainer.css('background-color', _this3.panel.bgColor);
               } else {
                 $panelContainer.css('background-color', '');
               }

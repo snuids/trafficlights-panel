@@ -4,6 +4,7 @@ import _ from 'lodash';
 import TimeSeries from 'app/core/time_series';
 
 import './css/trafficlight-panel.css!';
+import { stringToJsRegex } from '@grafana/data';
 
 const panelDefaults = {
   bgColor: null
@@ -60,8 +61,44 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
     this.render();
   }
 
-  onRender() {    
+  onRender() {
     //this.data = this.parseSeries(this.series);
+    this.applyRegex();
+  }
+  applyRegex(){
+    let seriesList = this.series;
+    if (seriesList && seriesList.length > 0) {
+      for (let i = 0; i < seriesList.length; i++) {
+        if (this.panel.trafficLightSettings.regexPattern !== '' && this.panel.trafficLightSettings.regexPattern !== undefined) {
+          const regexVal = stringToJsRegex(this.panel.trafficLightSettings.regexPattern);
+          if (seriesList[i].id && regexVal.test(seriesList[i].id.toString())) {
+            const temp = regexVal.exec(seriesList[i].id.toString());
+            if (!temp) {
+              continue;
+            }
+            let extractedtxt = '';
+            if (temp.length > 1) {
+              temp.slice(1).forEach((value, i) => {
+                if (value) {
+                  extractedtxt += extractedtxt.length > 0 ? ' ' + value.toString() : value.toString();
+                }
+              });
+              this.data[i].name = extractedtxt;
+            }
+          }
+          else {
+            this.data[i].name = seriesList[i].id;
+            seriesList[i].label = seriesList[i].id;
+  
+          }
+        }
+        else {
+          this.data[i].name = seriesList[i].id;
+          seriesList[i].label = seriesList[i].id;
+
+        }
+      }
+    }
   }
 
 
@@ -129,7 +166,8 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
         this.data=_.orderBy(newseries, 'value','desc');
       else
         this.data=_.orderBy(newseries, 'value','asc');
-    }    
+    }   
+    this.applyRegex(); 
   }
 
   seriesHandler(seriesData) {
