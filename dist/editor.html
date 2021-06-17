@@ -102,13 +102,13 @@
 				<input type="number" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.max" ng-change="ctrl.render()" ng-model-onblur>
 		</div>
 		<div class="gf-form" ng-show="ctrl.panel.trafficLightSettings.invertScale && (ctrl.panel.trafficLightSettings.greenThreshold>ctrl.panel.trafficLightSettings.redThreshold)">
-			<label class="errorlabel">Red threshold Must be greater than green threshold.</label>
+			<label class="errorlabel">Red threshold must be greater than Green threshold.</label>
 		</div>
 		<div class="gf-form" ng-show="!ctrl.panel.trafficLightSettings.invertScale && (ctrl.panel.trafficLightSettings.redThreshold>ctrl.panel.trafficLightSettings.greenThreshold)">
-			<label class="errorlabel">Red threshold Must be lower than red threshold.</label>
+			<label class="errorlabel">Red threshold must be lower than Green threshold.</label>
 		</div>
 		<div class="gf-form" ng-show="!ctrl.panel.trafficLightSettings.invertScale && (ctrl.panel.trafficLightSettings.greenThreshold>ctrl.panel.trafficLightSettings.max)">
-			<label class="errorlabel">Max threshold Must be greater than green threshold.</label>
+			<label class="errorlabel">Max threshold must be greater than Green threshold.</label>
 		</div>
 	</div>
 	<!-- Regex-->
