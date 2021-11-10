@@ -58,3 +58,11 @@ Copy the dist folder in your grafana plugin directory and rename it to trafficli
 
 ## V1.4.6 (27/Mai/2019)
 - Added color picker for metric name color
+
+
+## V1.4.7 (17/Sep/2020)
+- Image renderer support
+- Grafana 7 compatibility
+
+## V1.5.0 (10/Nov/2021)
+ - Turn light off if metric value equal noValueNumber setting
