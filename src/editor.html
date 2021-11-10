@@ -96,6 +96,11 @@
 			<info-popover  ng-show="!ctrl.panel.trafficLightSettings.invertScale" mode="right-absolute">Values above this limit will turn the traffic light to green.</info-popover>
 			<input type="number" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.greenThreshold" ng-change="ctrl.render()" ng-model-onblur>
 		</div>
+		<div class="gf-form">
+			<label class="gf-form-label width-12">No value</label>
+			<info-popover  mode="right-absolute">Values equal to this value will turn the light off and label displayed will be N/A. Leave blank to disable the feature.</info-popover>
+			<input type="number" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.noValueNumber" ng-change="ctrl.render()" ng-model-onblur>
+		</div>
 		<div class="gf-form" ng-show="!ctrl.panel.trafficLightSettings.invertScale">
 				<label class="gf-form-label width-12">Max Threshold</label>
 				<info-popover   mode="right-absolute">Values above this limit will turn the traffic light to red.</info-popover>
