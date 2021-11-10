@@ -17,6 +17,7 @@ const panelDefaults = {
     showTrend:true,
     redThreshold:20,
     greenThreshold:80,
+    noValueNumber:null,
     max:100,
     fontSize:'12px',
     fontColor: 'black',
