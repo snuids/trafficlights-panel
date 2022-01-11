@@ -8,19 +8,19 @@ Hash: SHA512
   "signedByOrg": "snuids",
   "signedByOrgName": "Arnaud Marchand",
   "plugin": "snuids-trafficlights-panel",
-  "version": "1.4.7",
-  "time": 1641899195156,
+  "version": "1.5.1",
+  "time": 1641900168504,
   "keyId": "7e4d0c6a708866e7",
   "files": {
     "css/trafficlight-panel.css": "facaada569f9a87bed8c1e7100ba4fafab1844e3117bb2b6d5ae3f8df9d822df",
-    "module.html": "efe2b12e1710ff97cfb31f273e5fc39aa9f16fd0c4cb5c5ffe499a235404515f",
+    "module.html": "eb897ea2bd70c6f8fae81b5a7d59a163103cea9fc9e3b50ce92152443a60bfdd",
     "editor.html": "c2d48be354989a7de9aa569068ed68a6455d8fc8b30a82868de43cdffd27af5e",
-    "module.js.map": "fc6ae3921da577f5513e77ba74fec9752168a7430fc251c9b4a1f377ba4a9e44",
-    "plugin.json": "e1382e7a11115668ea6ecee81363fb135807ab3798256b56220010cc35f004fc",
+    "module.js.map": "2a1f07afc44b5921db13939a2a7d8e52b059e34f2867486cacf867b4666dab40",
+    "plugin.json": "4b58ffc5a1df5a612166febcdcac523691697204db6b3a5a939aea3b0390cbf4",
     "trafficlight_ctrl.js": "6f6908e7210bc9543de1363a1048f314baa7b9cb2dbb86de5bd66829f7e4b9d2",
-    "README.md": "6d56162460d88086673d7c6eada060f3957cb4296358cd32efaf1d0070e8e2fc",
+    "README.md": "dad1977d2622e571c23559a26d77b911f58b8e8e11611e706f24224755c2ee08",
     "module.js": "a62d17ace40a531de6d92ef8e4c1b98154ceb761ecba8cdfeffd0481aa137630",
-    "trafficlight_ctrl.js.map": "47c8940cf65e91f4dd93499eb41563f5512107ed6ac5748d19a7ff1a4dfd4976",
+    "trafficlight_ctrl.js.map": "1b159cc47d8ac964956077208ad08d3f2edf52f4e3bc8b3863ece9fd5c524714",
     "src/img/screenshot-traffic-showcase.jpg": "fba869f2d447b37e366d6f287925affdf7aa34403c13da748c0c25dc76d7378f",
     "src/img/screenshot-traffic-showcase2.jpg": "3f75b5505fc8eb5f6e5eb01331a7584c133920c65d41468d8999abeba7b56a5d",
     "src/img/screenshot-traffic-options.jpg": "70d283e57ca3efbe32c76eec8dd4699e5bbbc99b5e2c083a2eb4161252b3f0c3",
@@ -32,9 +32,9 @@ Hash: SHA512
 Version: OpenPGP.js v4.10.1
 Comment: https://openpgpjs.org
 
-wqEEARMKAAYFAmHdZLsACgkQfk0ManCIZudQYAIJAQ8ETVxoU7kU0zpGnaxF
-fCk0vY+eYaP8fOwdYOcjYHT0RbVRhHQ00fKarY4Uv6uWW7mke0HcYDxr6Qe4
-d9Kr6m5sAgjtFGrzgilvGaAOt4EF++E3vC9iSVPJmSoOiSBez/US4pi4cgtT
-9UPtTBtbC/VxfBq9SQmJG8Eaf4d0kNiCbXvNTA==
-=p7eT
+wqEEARMKAAYFAmHdaIgACgkQfk0ManCIZuccLwIJATAv3wwxwSET0c8r7LUi
+vdmR0M/Ehq8k2+NV3VTR5jQuHZhSXLNYKC6lmrKn53OZGkafJtfOH6t6SQwL
+KFRqCeMvAgi5ICVsJVm6GhllMIbBF/8GB+FawV/BQENtcOb8KTtHKKmNLzH+
+1RbBxH7vT1PsD/s8iHG9ZXIgLLnsnM2D0CLcnA==
+=92F0
 -----END PGP SIGNATURE-----

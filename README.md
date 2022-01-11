@@ -66,3 +66,6 @@ Copy the dist folder in your grafana plugin directory and rename it to trafficli
 
 ## V1.5.0 (10/Nov/2021)
  - Turn light off if metric value equal noValueNumber setting
+
+## V1.5.1 (11/Jan/2022)
+ - Plugin signed

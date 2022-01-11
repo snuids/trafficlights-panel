@@ -29,7 +29,7 @@
             </span>
             <span ng-if="ctrl.panel.trafficLightSettings.showValue">
              <span ng-if="metric.value == ctrl.panel.trafficLightSettings.noValueNumber">N/A</span>
-             <span ng-if="metric.value != ctrl.panel.trafficLightSettings.noValueNumber">({{metric.value | number:ctrl.panel.trafficLightSettings.digits}}{{ctrl.panel.trafficLightSettings.units}})</span>
+             <span ng-if="metric.value != ctrl.panel.trafficLightSettings.noValueNumber">{{metric.value | number:ctrl.panel.trafficLightSettings.digits}}{{ctrl.panel.trafficLightSettings.units}}</span>
 
             </span>
             <span ng-if="ctrl.panel.trafficLightSettings.showTrend" ng-class="metric.trendClass">&nbsp;{{metric.trend | number:ctrl.panel.trafficLightSettings.digits}}&nbsp;</span>
