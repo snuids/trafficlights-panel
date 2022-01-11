@@ -9,14 +9,14 @@ Hash: SHA512
   "signedByOrgName": "Arnaud Marchand",
   "plugin": "snuids-trafficlights-panel",
   "version": "1.5.1",
-  "time": 1641900168504,
+  "time": 1641901190342,
   "keyId": "7e4d0c6a708866e7",
   "files": {
     "css/trafficlight-panel.css": "facaada569f9a87bed8c1e7100ba4fafab1844e3117bb2b6d5ae3f8df9d822df",
     "module.html": "eb897ea2bd70c6f8fae81b5a7d59a163103cea9fc9e3b50ce92152443a60bfdd",
     "editor.html": "c2d48be354989a7de9aa569068ed68a6455d8fc8b30a82868de43cdffd27af5e",
     "module.js.map": "2a1f07afc44b5921db13939a2a7d8e52b059e34f2867486cacf867b4666dab40",
-    "plugin.json": "4b58ffc5a1df5a612166febcdcac523691697204db6b3a5a939aea3b0390cbf4",
+    "plugin.json": "8c18abce31be94c71101ccdae37dbf58ce53b2165faa02e28161bfcc90bf1319",
     "trafficlight_ctrl.js": "6f6908e7210bc9543de1363a1048f314baa7b9cb2dbb86de5bd66829f7e4b9d2",
     "README.md": "dad1977d2622e571c23559a26d77b911f58b8e8e11611e706f24224755c2ee08",
     "module.js": "a62d17ace40a531de6d92ef8e4c1b98154ceb761ecba8cdfeffd0481aa137630",
@@ -32,9 +32,9 @@ Hash: SHA512
 Version: OpenPGP.js v4.10.1
 Comment: https://openpgpjs.org
 
-wqEEARMKAAYFAmHdaIgACgkQfk0ManCIZuccLwIJATAv3wwxwSET0c8r7LUi
-vdmR0M/Ehq8k2+NV3VTR5jQuHZhSXLNYKC6lmrKn53OZGkafJtfOH6t6SQwL
-KFRqCeMvAgi5ICVsJVm6GhllMIbBF/8GB+FawV/BQENtcOb8KTtHKKmNLzH+
-1RbBxH7vT1PsD/s8iHG9ZXIgLLnsnM2D0CLcnA==
-=92F0
+wqEEARMKAAYFAmHdbIYACgkQfk0ManCIZucyWwIJAaRGTP8H7+AptncLRHdw
+UIq8GYf83qjAM6sFQ1+HPExBmIsD5TGNGMGwrPD9wbk70xEwH1Kf09m5DfJE
+72S0YjW3AgYoaYrmh/MWkA9SjJ1CIYYHEk091tOe+uiOdSuw0q7GsIyJ9TxB
+cQDHyZk6xqFLenIs1fV5XiPRlRboRwsapJa7iA==
+=itBI
 -----END PGP SIGNATURE-----
