@@ -17,7 +17,7 @@ module.exports = (grunt) => {
       },
       pluginDef: {
         expand: true,
-        src: ['plugin.json', 'README.md'],
+        src: ['plugin.json', 'README.md','LICENSE'],
         dest: 'dist',
       },
       img_to_dist: {
@@ -25,7 +25,7 @@ module.exports = (grunt) => {
         expand: true,
         src: ['img/**/*'],
         dest: 'dist/src/'
-      },
+      }
     },
 
     watch: {
@@ -52,8 +52,17 @@ module.exports = (grunt) => {
         }]
       },
     },
+    
+    shell: {      
+      deletezip: 'rm *.zip',      
+      duplicate: 'cp -r dist snuids-trafficlights-panel',
+      exportversion: 'export zipversion2=`cat src/plugin.json | grep "version" | cut -d \':\' -f2 | cut -d \'"\' -f2`',
+      createzip: 'zip -r snuids-trafficlights-panel-v${zipversion2}.zip snuids-trafficlights-panel',
+      deletetarget: 'rm -r snuids-trafficlights-panel'
+    }
 
   });
 
-  grunt.registerTask('default', ['clean', 'copy:src_to_dist', 'copy:pluginDef', 'copy:img_to_dist', 'babel']);
+  grunt.registerTask('default', ['clean','shell:deletezip','shell:deletetarget', 'copy:src_to_dist', 'copy:pluginDef'
+      , 'copy:img_to_dist', 'babel','shell:exportversion','shell:duplicate','shell:createzip','shell:deletetarget']);
 };

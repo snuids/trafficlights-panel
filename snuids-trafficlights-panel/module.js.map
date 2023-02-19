@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/module.js"],"names":["TrafficLightCtrl"],"mappings":";;;;;;;;AAAQA,sB,sBAAAA,gB;;;2BAGNA,gB","file":"module.js","sourcesContent":["import {TrafficLightCtrl} from './trafficlight_ctrl';\n\nexport {\n  TrafficLightCtrl as PanelCtrl\n};\n"]}

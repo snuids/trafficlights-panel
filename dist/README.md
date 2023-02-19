@@ -69,3 +69,7 @@ Copy the dist folder in your grafana plugin directory and rename it to trafficli
 
 ## V1.5.1 (11/Jan/2022)
  - Plugin signed
+
+## V1.5.2 (19/Feb/2023)
+ - Retry to publish on grafana
+
