@@ -17,7 +17,7 @@ module.exports = (grunt) => {
       },
       pluginDef: {
         expand: true,
-        src: ['plugin.json', 'README.md','LICENSE'],
+        src: ['plugin.json', 'README.md','LICENSE','MANIFEST.txt'],
         dest: 'dist',
       },
       img_to_dist: {
@@ -55,6 +55,7 @@ module.exports = (grunt) => {
     
     shell: {      
       deletezip: 'rm *.zip',      
+      sign:'npx @grafana/sign-plugin',
       duplicate: 'cp -r dist snuids-trafficlights-panel',
       exportversion: 'export zipversion2=`cat src/plugin.json | grep "version" | cut -d \':\' -f2 | cut -d \'"\' -f2`',
       createzip: 'zip -r snuids-trafficlights-panel-v${zipversion2}.zip snuids-trafficlights-panel',
@@ -64,5 +65,5 @@ module.exports = (grunt) => {
   });
 
   grunt.registerTask('default', ['clean','shell:deletezip','shell:deletetarget', 'copy:src_to_dist', 'copy:pluginDef'
-      , 'copy:img_to_dist', 'babel','shell:exportversion','shell:duplicate','shell:createzip','shell:deletetarget']);
+      , 'copy:img_to_dist', 'babel','shell:exportversion','shell:sign','shell:duplicate','shell:createzip','shell:deletetarget']);
 };
