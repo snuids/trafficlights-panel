@@ -157,8 +157,6 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
           newserie["tname"]=transHt[newserie["name"]]
         else
           newserie["tname"]=newserie["name"]
-        console.log(transHt)
-        console.log(newserie)
         newseries.push(newserie);
       }
 
