@@ -9,7 +9,7 @@ Hash: SHA512
   "signedByOrgName": "Arnaud Marchand",
   "plugin": "snuids-trafficlights-panel",
   "version": "1.6.0",
-  "time": 1677926908743,
+  "time": 1677927875141,
   "keyId": "7e4d0c6a708866e7",
   "files": {
     "LICENSE": "b8d053c6d603e7b8125ef4eda9f2016b99b6c79fafac5b70e1906ba7c385041e",
@@ -18,10 +18,10 @@ Hash: SHA512
     "editor.html": "0130381707b1acdcfde9ae755b7e994248fa2d1a560328e0b449821e4cef8b42",
     "module.js.map": "2a1f07afc44b5921db13939a2a7d8e52b059e34f2867486cacf867b4666dab40",
     "plugin.json": "14f1f0eb00abdf312365b488833959f50e805a74a89ee1a5413b5ada945b2555",
-    "trafficlight_ctrl.js": "57c4142596b749e441746a1d571d2bc9f607de613483d9a22b18d60c0f7e0ef6",
+    "trafficlight_ctrl.js": "c7f18829936416cb6cf0b84bfa19972366508024763d89d6276c305719d135f2",
     "README.md": "0533abfa89a278493e1a8a363aa6334d5891400e1ed6896f3fd97d8770774380",
     "module.js": "a62d17ace40a531de6d92ef8e4c1b98154ceb761ecba8cdfeffd0481aa137630",
-    "trafficlight_ctrl.js.map": "9c4da63163d8bb4f7c4261835fb2a40534a709750c4d6e64f92828a6f043d6eb",
+    "trafficlight_ctrl.js.map": "c91a3e0ceeef12e51893db94f41c4d5c89624c8bf6423c80a78a71646a7dba6c",
     "src/img/screenshot-traffic-showcase.jpg": "fba869f2d447b37e366d6f287925affdf7aa34403c13da748c0c25dc76d7378f",
     "src/img/screenshot-traffic-showcase2.jpg": "3f75b5505fc8eb5f6e5eb01331a7584c133920c65d41468d8999abeba7b56a5d",
     "src/img/screenshot-traffic-options.jpg": "70d283e57ca3efbe32c76eec8dd4699e5bbbc99b5e2c083a2eb4161252b3f0c3",
@@ -33,10 +33,10 @@ Hash: SHA512
 Version: OpenPGP.js v4.10.10
 Comment: https://openpgpjs.org
 
-wrkEARMKAAYFAmQDIfwAIQkQfk0ManCIZucWIQTzOyW2kQdOhGNlcPN+TQxq
-cIhm5yUIAgkBFs71c0MoTY88irA+AqH9mspWL/s7kTwOdz7QMg+Qcg+Ay35m
-avvuz/YovBkPdeGkZu9vmsofHqTlIKqIPeCMfa8CCQGYaLxlr05w4wS01Bnb
-1+814IOmVgc8Jaz5gvWc9GGTnGMumbciGpsAdp4SNvMgqyAsDvZL9xJjJuu7
-t9E9T5FvBw==
-=tdwL
+wrcEARMKAAYFAmQDJcMAIQkQfk0ManCIZucWIQTzOyW2kQdOhGNlcPN+TQxq
+cIhm58y2Agjh7+g8+bgmYtO7+aCF6ocRo3Jkvx9bEBmj/+PWZSwe37dtK+Ei
+5aSLNT9u+q4N07pSKHIzxDnjzYBP0yJCS7WCRQII4SwRh2NktNnGMLdruOjX
+JsGrPjxL0RTJ0aRNkSibxdV902Pl0owypecpj6ueMcvoSXpA++rjDPlrrkmJ
+VolTDP4=
+=iEjJ
 -----END PGP SIGNATURE-----

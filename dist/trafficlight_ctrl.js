@@ -228,8 +228,6 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
                 newserie.realvalue = newserie.value;
                 if (this.panel.trafficLightSettings.useDiffAsColor) newserie.value = newserie.trend;
                 if (transHt[newserie["name"]]) newserie["tname"] = transHt[newserie["name"]];else newserie["tname"] = newserie["name"];
-                console.log(transHt);
-                console.log(newserie);
                 newseries.push(newserie);
               }
             } catch (e) {
