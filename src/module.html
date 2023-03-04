@@ -23,13 +23,13 @@
             </div>
             <div class="traffic-light-legend"
                  style="font-size: {{ctrl.panel.trafficLightSettings.fontSize}};color: {{ctrl.panel.trafficLightSettings.fontColor}}">
-                {{metric.name}}&nbsp;
+                {{metric.tname}}&nbsp;
                 <span ng-if="ctrl.panel.trafficLightSettings.showValue || ctrl.panel.trafficLightSettings.showTrend">
             <br/>
             </span>
             <span ng-if="ctrl.panel.trafficLightSettings.showValue">
              <span ng-if="metric.value == ctrl.panel.trafficLightSettings.noValueNumber">N/A</span>
-             <span ng-if="metric.value != ctrl.panel.trafficLightSettings.noValueNumber">{{metric.value | number:ctrl.panel.trafficLightSettings.digits}}{{ctrl.panel.trafficLightSettings.units}}</span>
+             <span ng-if="metric.value != ctrl.panel.trafficLightSettings.noValueNumber">{{metric.realvalue | number:ctrl.panel.trafficLightSettings.digits}}{{ctrl.panel.trafficLightSettings.units}}</span>
 
             </span>
             <span ng-if="ctrl.panel.trafficLightSettings.showTrend" ng-class="metric.trendClass">&nbsp;{{metric.trend | number:ctrl.panel.trafficLightSettings.digits}}&nbsp;</span>

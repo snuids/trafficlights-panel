@@ -14,6 +14,7 @@ const panelDefaults = {
     width:20,
     invertScale:false,
     showValue:true,
+    useDiffAsColor:false,
     showTrend:true,
     redThreshold:20,
     greenThreshold:80,
@@ -23,6 +24,7 @@ const panelDefaults = {
     fontColor: 'black',
     units:'',
     digits:1,
+    transformationDict:'source1=target1;source2=target2',
     spreadControls:false,
     sortLights:false,
     renderLink:false,
@@ -106,7 +108,18 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
 
   onDataReceived(dataList) {
     var newseries=[]
+    var transformationDict=this.panel.trafficLightSettings.transformationDict;
 
+    var transHt={}
+    
+    for(var tra of transformationDict.split(';'))
+    {
+      var cols=tra.split('=');
+      if(cols.length>=2)
+      {
+        transHt[cols[0]]=cols[1]
+      }
+    }
     try
     {
       this.series = dataList.map(this.seriesHandler.bind(this));
@@ -137,6 +150,15 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
           else
             newserie.trendClass='traffic-light-trend-neutral'
         }
+        newserie.realvalue=newserie.value;
+        if (this.panel.trafficLightSettings.useDiffAsColor)
+          newserie.value=newserie.trend;
+        if (transHt[newserie["name"]])
+          newserie["tname"]=transHt[newserie["name"]]
+        else
+          newserie["tname"]=newserie["name"]
+        console.log(transHt)
+        console.log(newserie)
         newseries.push(newserie);
       }
 
@@ -149,13 +171,21 @@ export class TrafficLightCtrl extends MetricsPanelCtrl {
       {
         var newserie={
           "name":dataList[0].rows[i][0],
-          "value":dataList[0].rows[i][1]
+          "value":dataList[0].rows[i][1],
+          "realvalue":dataList[0].rows[i][1]
         }
+        
+        if (transHt[newserie["name"]])
+          newserie["tname"]=transHt[newserie["name"]]
+        else
+          newserie["tname"]=newserie["name"]
+    
         newseries.push(newserie);
       }
     }
 
-  //    console.log(newseries)
+    
+    
 
     if(this.panel.trafficLightSettings.sortLights)
     {

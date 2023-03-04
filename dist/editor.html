@@ -18,6 +18,7 @@
 					<spectrum-picker class="gf-form-input padding-8" ng-model="ctrl.panel.trafficLightSettings.fontColor" ng-change="ctrl.render()" ></spectrum-picker>
 				</span>
 		</div>
+		<gf-form-switch class="gf-form" label="Use Trend as Traffic Color" label-class="width-12" checked="ctrl.panel.trafficLightSettings.useDiffAsColor" on-change="ctrl.render()"></gf-form-switch>
 		<gf-form-switch class="gf-form" label="Show Value" label-class="width-12" checked="ctrl.panel.trafficLightSettings.showValue" on-change="ctrl.render()"></gf-form-switch>
 		<div class="gf-form" ng-show="ctrl.panel.trafficLightSettings.showValue">
 				<label class="gf-form-label width-12">Units</label>
@@ -29,6 +30,7 @@
 				<info-popover   mode="right-absolute">Number of digits used to display the values.</info-popover>
 				<input type="number" class="input-small gf-form-input max-width-10" ng-model="ctrl.panel.trafficLightSettings.digits" ng-change="ctrl.render()" ng-model-onblur>
 		</div>
+		
 		<gf-form-switch class="gf-form" label="Show Trend" label-class="width-12" checked="ctrl.panel.trafficLightSettings.showTrend" on-change="ctrl.render()"></gf-form-switch>
 		<gf-form-switch class="gf-form" label="Sort Lights" label-class="width-12" checked="ctrl.panel.trafficLightSettings.sortLights" on-change="ctrl.render()"></gf-form-switch>
     <gf-form-switch class="gf-form" label-class="width-12" label="Render as link" checked="ctrl.panel.trafficLightSettings.renderLink" change="ctrl.render()"></gf-form-switch>
@@ -124,6 +126,16 @@
 			<tip>Optional, The values in the specified column are filtered and displayed according to this regex. Ex: String: Url|broadcom.com|mirror|location-1 regex: /Url\|(.*?)\|/ Output: broadcom.com</tip>
 		  </label>
 		  <input type="text" class="gf-form-input" ng-model="ctrl.panel.trafficLightSettings.regexPattern" ng-blur="ctrl.render()" placeholder="regex">
+		</div>
+	</div>
+	<!-- Transform-->
+	<div class="section gf-form-group">
+		<h5 class="section-heading">Transformation</h5>
+		<div class="gf-form">
+		  <label class="gf-form-label width-8">Transformation Dictionary
+			<tip>Optional. The series label are transformed using the conversions defined. The format is name1=target1;name2=target2</tip>
+		  </label>
+		  <input type="text" class="gf-form-input" ng-model="ctrl.panel.trafficLightSettings.transformationDict" ng-blur="ctrl.render()" placeholder="a=b;">
 		</div>
 	</div>
 </div>

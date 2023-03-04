@@ -73,3 +73,6 @@ Copy the dist folder in your grafana plugin directory and rename it to trafficli
 ## V1.5.2 (19/Feb/2023)
  - Retry to publish on grafana
 
+## V1.6.0 (04/Mar/2023)
+ - Added the option to color the traffic light via the trend (last - (previous))
+ - Added a serie name transformation option

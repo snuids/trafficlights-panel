@@ -1,0 +1,42 @@
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+{
+  "manifestVersion": "2.0.0",
+  "signatureType": "community",
+  "signedByOrg": "snuids",
+  "signedByOrgName": "Arnaud Marchand",
+  "plugin": "snuids-trafficlights-panel",
+  "version": "1.6.0",
+  "time": 1677926908743,
+  "keyId": "7e4d0c6a708866e7",
+  "files": {
+    "LICENSE": "b8d053c6d603e7b8125ef4eda9f2016b99b6c79fafac5b70e1906ba7c385041e",
+    "css/trafficlight-panel.css": "facaada569f9a87bed8c1e7100ba4fafab1844e3117bb2b6d5ae3f8df9d822df",
+    "module.html": "39c40a6237c5a35af2dcddca347bff63081226c5781fa2dc2c2c8307f08f8b96",
+    "editor.html": "0130381707b1acdcfde9ae755b7e994248fa2d1a560328e0b449821e4cef8b42",
+    "module.js.map": "2a1f07afc44b5921db13939a2a7d8e52b059e34f2867486cacf867b4666dab40",
+    "plugin.json": "14f1f0eb00abdf312365b488833959f50e805a74a89ee1a5413b5ada945b2555",
+    "trafficlight_ctrl.js": "57c4142596b749e441746a1d571d2bc9f607de613483d9a22b18d60c0f7e0ef6",
+    "README.md": "0533abfa89a278493e1a8a363aa6334d5891400e1ed6896f3fd97d8770774380",
+    "module.js": "a62d17ace40a531de6d92ef8e4c1b98154ceb761ecba8cdfeffd0481aa137630",
+    "trafficlight_ctrl.js.map": "9c4da63163d8bb4f7c4261835fb2a40534a709750c4d6e64f92828a6f043d6eb",
+    "src/img/screenshot-traffic-showcase.jpg": "fba869f2d447b37e366d6f287925affdf7aa34403c13da748c0c25dc76d7378f",
+    "src/img/screenshot-traffic-showcase2.jpg": "3f75b5505fc8eb5f6e5eb01331a7584c133920c65d41468d8999abeba7b56a5d",
+    "src/img/screenshot-traffic-options.jpg": "70d283e57ca3efbe32c76eec8dd4699e5bbbc99b5e2c083a2eb4161252b3f0c3",
+    "src/img/screenshot-traffic-metrics.jpg": "3bc058d7bba120ec0b7385a2bbab91da6ef0e8d4995c062b8d3438fd6a03d99a",
+    "src/img/traffic_light_logo.jpg": "2e2e68ea5179d649df77c4e6cf33c58f27ea0f3a8e3bf69ff1e1efefb1b32675"
+  }
+}
+-----BEGIN PGP SIGNATURE-----
+Version: OpenPGP.js v4.10.10
+Comment: https://openpgpjs.org
+
+wrkEARMKAAYFAmQDIfwAIQkQfk0ManCIZucWIQTzOyW2kQdOhGNlcPN+TQxq
+cIhm5yUIAgkBFs71c0MoTY88irA+AqH9mspWL/s7kTwOdz7QMg+Qcg+Ay35m
+avvuz/YovBkPdeGkZu9vmsofHqTlIKqIPeCMfa8CCQGYaLxlr05w4wS01Bnb
+1+814IOmVgc8Jaz5gvWc9GGTnGMumbciGpsAdp4SNvMgqyAsDvZL9xJjJuu7
+t9E9T5FvBw==
+=tdwL
+-----END PGP SIGNATURE-----
