@@ -8,20 +8,20 @@ Hash: SHA512
   "signedByOrg": "snuids",
   "signedByOrgName": "Arnaud Marchand",
   "plugin": "snuids-trafficlights-panel",
-  "version": "1.6.0",
-  "time": 1677927875141,
+  "version": "1.7.0",
+  "time": 1678455001197,
   "keyId": "7e4d0c6a708866e7",
   "files": {
     "LICENSE": "b8d053c6d603e7b8125ef4eda9f2016b99b6c79fafac5b70e1906ba7c385041e",
-    "css/trafficlight-panel.css": "facaada569f9a87bed8c1e7100ba4fafab1844e3117bb2b6d5ae3f8df9d822df",
-    "module.html": "39c40a6237c5a35af2dcddca347bff63081226c5781fa2dc2c2c8307f08f8b96",
-    "editor.html": "0130381707b1acdcfde9ae755b7e994248fa2d1a560328e0b449821e4cef8b42",
+    "css/trafficlight-panel.css": "0e10e6a29649fcd1920dfee6e8d577867e7559f5cbb02fea15b16a6ffad84e3b",
+    "module.html": "fa1959a324b57f274e49902e04291aeef5df533804a4fce3365f11ec7c4af7ca",
+    "editor.html": "f34269d3fc70b004f4f751f77b6df527a07af01e1637bc36ff4f016513081a65",
     "module.js.map": "2a1f07afc44b5921db13939a2a7d8e52b059e34f2867486cacf867b4666dab40",
-    "plugin.json": "14f1f0eb00abdf312365b488833959f50e805a74a89ee1a5413b5ada945b2555",
-    "trafficlight_ctrl.js": "c7f18829936416cb6cf0b84bfa19972366508024763d89d6276c305719d135f2",
-    "README.md": "0533abfa89a278493e1a8a363aa6334d5891400e1ed6896f3fd97d8770774380",
+    "plugin.json": "eb52d2f38668f9bfceaf3779726ab86f7cc88ee1ee1377959de107d04baa6326",
+    "trafficlight_ctrl.js": "1b535867a10ce5a5b4a2c266ce34cd1cea6cd3d99dcf59d2a47f5ea4d7a133fd",
+    "README.md": "6fa42ab268a69efeff56f976931e1a3d761490b0168042f3206905875b52bceb",
     "module.js": "a62d17ace40a531de6d92ef8e4c1b98154ceb761ecba8cdfeffd0481aa137630",
-    "trafficlight_ctrl.js.map": "c91a3e0ceeef12e51893db94f41c4d5c89624c8bf6423c80a78a71646a7dba6c",
+    "trafficlight_ctrl.js.map": "6dd4930dce36d15cdcafd4e3e46e7070f75d26af67b329f9c35119ce7dccdb50",
     "src/img/screenshot-traffic-showcase.jpg": "fba869f2d447b37e366d6f287925affdf7aa34403c13da748c0c25dc76d7378f",
     "src/img/screenshot-traffic-showcase2.jpg": "3f75b5505fc8eb5f6e5eb01331a7584c133920c65d41468d8999abeba7b56a5d",
     "src/img/screenshot-traffic-options.jpg": "70d283e57ca3efbe32c76eec8dd4699e5bbbc99b5e2c083a2eb4161252b3f0c3",
@@ -33,10 +33,10 @@ Hash: SHA512
 Version: OpenPGP.js v4.10.10
 Comment: https://openpgpjs.org
 
-wrcEARMKAAYFAmQDJcMAIQkQfk0ManCIZucWIQTzOyW2kQdOhGNlcPN+TQxq
-cIhm58y2Agjh7+g8+bgmYtO7+aCF6ocRo3Jkvx9bEBmj/+PWZSwe37dtK+Ei
-5aSLNT9u+q4N07pSKHIzxDnjzYBP0yJCS7WCRQII4SwRh2NktNnGMLdruOjX
-JsGrPjxL0RTJ0aRNkSibxdV902Pl0owypecpj6ueMcvoSXpA++rjDPlrrkmJ
-VolTDP4=
-=iEjJ
+wrcEARMKAAYFAmQLMNkAIQkQfk0ManCIZucWIQTzOyW2kQdOhGNlcPN+TQxq
+cIhm56PzAgY6fwPtJl8/xYp2p0wWn3F4jZOJl0M9+PJQ8ttI4OHBuA891Lz6
+ibSAnMgryh08x8dKaozoktJcBKFZZHS+BTIzAwIEDl66OIhqehXuJVRaVau9
+XNv/X2d1QW6upbBNY6b2ocbsiVu+LwJb4Yo85ZZ3LnFs7qkTFvYLzO4mG6TC
+RipS4NY=
+=bwHv
 -----END PGP SIGNATURE-----

@@ -76,3 +76,7 @@ Copy the dist folder in your grafana plugin directory and rename it to trafficli
 ## V1.6.0 (04/Mar/2023)
  - Added the option to color the traffic light via the trend (last - (previous))
  - Added a serie name transformation option
+
+## V1.7.0 (10/Mar/2023)
+ - Added the abs option for trend
+ - Added the percentage option for tren

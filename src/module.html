@@ -32,7 +32,7 @@
              <span ng-if="metric.value != ctrl.panel.trafficLightSettings.noValueNumber">{{metric.realvalue | number:ctrl.panel.trafficLightSettings.digits}}{{ctrl.panel.trafficLightSettings.units}}</span>
 
             </span>
-            <span ng-if="ctrl.panel.trafficLightSettings.showTrend" ng-class="metric.trendClass">&nbsp;{{metric.trend | number:ctrl.panel.trafficLightSettings.digits}}&nbsp;</span>
+            <span ng-if="ctrl.panel.trafficLightSettings.showTrend" ng-class="metric.trendClass">&nbsp;{{metric.trend | number:ctrl.panel.trafficLightSettings.digits}}&nbsp;{{ctrl.panel.trafficLightSettings.trendAsPercentage?'%':''}}</span>
          </div>
       </div>
    </div>

@@ -16,7 +16,15 @@
   flex-direction: column;
 }
 
+.traffic-light-trend-good::before {
+  content: "+";
+}
 .traffic-light-trend-good
+{
+  background-color: green;
+  color:white;
+}
+.traffic-light-trend-good-nobef
 {
   background-color: green;
   color:white;

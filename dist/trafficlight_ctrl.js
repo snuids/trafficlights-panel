@@ -75,6 +75,8 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
           showValue: true,
           useDiffAsColor: false,
           showTrend: true,
+          trendAsPercentage: false,
+          absThreshold: false,
           redThreshold: 20,
           greenThreshold: 80,
           noValueNumber: null,
@@ -137,36 +139,38 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
           value: function applyRegex() {
             var _this2 = this;
 
-            var seriesList = this.series;
-            if (seriesList && seriesList.length > 0) {
-              for (var i = 0; i < seriesList.length; i++) {
-                if (this.panel.trafficLightSettings.regexPattern !== '' && this.panel.trafficLightSettings.regexPattern !== undefined) {
-                  var regexVal = stringToJsRegex(this.panel.trafficLightSettings.regexPattern);
-                  if (seriesList[i].id && regexVal.test(seriesList[i].id.toString())) {
-                    var _ret = function () {
-                      var temp = regexVal.exec(seriesList[i].id.toString());
-                      if (!temp) {
-                        return 'continue';
-                      }
-                      var extractedtxt = '';
-                      if (temp.length > 1) {
-                        temp.slice(1).forEach(function (value, i) {
-                          if (value) {
-                            extractedtxt += extractedtxt.length > 0 ? ' ' + value.toString() : value.toString();
-                          }
-                        });
-                        _this2.data[i].name = extractedtxt;
-                      }
-                    }();
+            if (this.panel.trafficLightSettings.regexPattern !== '') {
+              var seriesList = this.series;
+              if (seriesList && seriesList.length > 0) {
+                for (var i = 0; i < seriesList.length; i++) {
+                  if (this.panel.trafficLightSettings.regexPattern !== '' && this.panel.trafficLightSettings.regexPattern !== undefined) {
+                    var regexVal = stringToJsRegex(this.panel.trafficLightSettings.regexPattern);
+                    if (seriesList[i].id && regexVal.test(seriesList[i].id.toString())) {
+                      var _ret = function () {
+                        var temp = regexVal.exec(seriesList[i].id.toString());
+                        if (!temp) {
+                          return 'continue';
+                        }
+                        var extractedtxt = '';
+                        if (temp.length > 1) {
+                          temp.slice(1).forEach(function (value, i) {
+                            if (value) {
+                              extractedtxt += extractedtxt.length > 0 ? ' ' + value.toString() : value.toString();
+                            }
+                          });
+                          _this2.data[i].name = extractedtxt;
+                        }
+                      }();
 
-                    if (_ret === 'continue') continue;
+                      if (_ret === 'continue') continue;
+                    } else {
+                      this.data[i].name = seriesList[i].id;
+                      seriesList[i].label = seriesList[i].id;
+                    }
                   } else {
                     this.data[i].name = seriesList[i].id;
                     seriesList[i].label = seriesList[i].id;
                   }
-                } else {
-                  this.data[i].name = seriesList[i].id;
-                  seriesList[i].label = seriesList[i].id;
                 }
               }
             }
@@ -217,7 +221,7 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
                 };
 
                 if (this.series[i].datapoints.length > 1) {
-                  newserie.trend = newserie.value - this.series[i].datapoints.slice(-2)[0][0];
+                  if (this.panel.trafficLightSettings.trendAsPercentage === true) newserie.trend = 100 * (newserie.value - this.series[i].datapoints.slice(-2)[0][0]) / this.series[i].datapoints.slice(-2)[0][0];else newserie.trend = newserie.value - this.series[i].datapoints.slice(-2)[0][0];
 
                   if (newserie.trend > 0) {
                     if (this.panel.trafficLightSettings.invertScale) newserie.trendClass = 'traffic-light-trend-bad';else newserie.trendClass = 'traffic-light-trend-good';
@@ -227,6 +231,17 @@ System.register(['app/plugins/sdk', 'moment', 'lodash', 'app/core/time_series', 
                 }
                 newserie.realvalue = newserie.value;
                 if (this.panel.trafficLightSettings.useDiffAsColor) newserie.value = newserie.trend;
+
+                if (this.panel.trafficLightSettings.absThreshold) {
+                  var curvalue = Math.abs(newserie.trend);
+                  newserie.trendClass = 'traffic-light-trend-good-nobef';
+                  if (curvalue > this.panel.trafficLightSettings.greenThreshold) {
+                    newserie.trendClass = 'traffic-light-trend-bad';
+                  } else if (curvalue > this.panel.trafficLightSettings.redThreshold) {
+                    newserie.trendClass = 'traffic-light-trend-neutral';
+                  }
+                }
+
                 if (transHt[newserie["name"]]) newserie["tname"] = transHt[newserie["name"]];else newserie["tname"] = newserie["name"];
                 newseries.push(newserie);
               }
