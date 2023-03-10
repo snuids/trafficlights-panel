@@ -9,7 +9,7 @@ Hash: SHA512
   "signedByOrgName": "Arnaud Marchand",
   "plugin": "snuids-trafficlights-panel",
   "version": "1.7.0",
-  "time": 1678455001197,
+  "time": 1678455139223,
   "keyId": "7e4d0c6a708866e7",
   "files": {
     "LICENSE": "b8d053c6d603e7b8125ef4eda9f2016b99b6c79fafac5b70e1906ba7c385041e",
@@ -33,10 +33,10 @@ Hash: SHA512
 Version: OpenPGP.js v4.10.10
 Comment: https://openpgpjs.org
 
-wrcEARMKAAYFAmQLMNkAIQkQfk0ManCIZucWIQTzOyW2kQdOhGNlcPN+TQxq
-cIhm56PzAgY6fwPtJl8/xYp2p0wWn3F4jZOJl0M9+PJQ8ttI4OHBuA891Lz6
-ibSAnMgryh08x8dKaozoktJcBKFZZHS+BTIzAwIEDl66OIhqehXuJVRaVau9
-XNv/X2d1QW6upbBNY6b2ocbsiVu+LwJb4Yo85ZZ3LnFs7qkTFvYLzO4mG6TC
-RipS4NY=
-=bwHv
+wrkEARMKAAYFAmQLMWMAIQkQfk0ManCIZucWIQTzOyW2kQdOhGNlcPN+TQxq
+cIhm52hYAgkBgrLEGp94nmteWK1pHs7EPcg79a9AZtZwRPryhb4Jb/gqouJU
+//9mPVsVa+p4++P38WxaNIncKijGmVBM65H9SqMCCQGOOZZRiAr6dxn7FAW1
+2J+6cGLzu8yhX+9MdWuPV8xppQJ3eMgqaRYIzp8erpAILhW8eSg8WQeKdEQj
+9lS7rkAjRg==
+=k0NV
 -----END PGP SIGNATURE-----
