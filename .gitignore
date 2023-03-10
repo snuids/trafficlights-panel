@@ -1,2 +1,4 @@
 #ignore node modules
 node_modules/
+.DS_Store
+snuids-trafficlights-panel-v.zip
